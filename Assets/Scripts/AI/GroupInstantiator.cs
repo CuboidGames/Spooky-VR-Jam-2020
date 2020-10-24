@@ -34,7 +34,7 @@ public class GroupInstantiator : MonoBehaviour
         var spawnPointsCount = spawnPoints.Count();
 
         for (int i = 0, ii = Mathf.Min(groupsCount, spawnPointsCount); i < ii; i++) {
-            int rIndex = Random.Range(0, ii - i - 1);
+            int rIndex = Random.Range(0, spawnPointsCount - i);
 
             InstantiateGroup(randomizedSpawnPoints[rIndex]);
             randomizedSpawnPoints.RemoveAt(rIndex);
