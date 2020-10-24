@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8445783712005252154}
+  - component: {fileID: 7440942506104179511}
   m_Layer: 0
   m_Name: KidsGroup
   m_TagString: Untagged
@@ -30,3 +31,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7440942506104179511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2643776651783058569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a6cc451d711644f98e83c9f713b267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groupSize: 3
+  kidPrefab: {fileID: 0}
+  OnKidsInstantiated:
+    m_PersistentCalls:
+      m_Calls: []
