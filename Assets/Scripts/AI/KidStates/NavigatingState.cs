@@ -22,6 +22,9 @@ namespace KidStates
         {
             if (GetDistanceToPlayer() < 10) {
                 kidController.SetState(new EscapingState(kidController));
+            } else if (Vector3.Distance(kidController.transform.position, kidController.navMeshAgent.destination) < 3)
+            {
+                kidController.SetState(new CollectingState(kidController));
             }
         }
     }

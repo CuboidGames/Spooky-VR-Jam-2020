@@ -34,8 +34,7 @@ namespace KidStates
         private IEnumerator CollectCoroutine()
         {
             yield return new WaitForSeconds(10);
-            // TODO: set group target
-            kidController.SetState(new NavigatingState(kidController));
+            kidController.groupController.GetNewTarget();
             coroutine = null;
         }
     }
