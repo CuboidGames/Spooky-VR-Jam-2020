@@ -9,7 +9,6 @@ public class KidKillDetection : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log(collider.name);
         if (collider.gameObject.CompareTag("PlayerWeapon"))
         {
             kidController.Die();           

@@ -3,6 +3,7 @@ using System.Collections;
 using KidStates;
 using UnityEngine.AI;
 using Assets.Scripts.AI;
+using UnityEngine.Events;
 
 public class KidController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class KidController : MonoBehaviour
     public GroupController groupController;
 
     public AbstractKidState kidState;
+
+    public UnityEvent OnDie; 
 
     void Start()
     {
@@ -47,6 +50,7 @@ public class KidController : MonoBehaviour
     public void Die()
     {
         SetState(new DeadState(this));
+        OnDie.Invoke();
     }
 
     void HandleKidState()

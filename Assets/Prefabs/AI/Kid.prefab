@@ -4993,7 +4993,7 @@ GameObject:
   - component: {fileID: 8191301817289341111}
   m_Layer: 0
   m_Name: Kid
-  m_TagString: Untagged
+  m_TagString: Kid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5051,6 +5051,9 @@ MonoBehaviour:
   candyParticleSystem: {fileID: 7612039750878301590}
   navMeshAgent: {fileID: 0}
   groupController: {fileID: 0}
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2203150680658357782
 PrefabInstance:
   m_ObjectHideFlags: 0

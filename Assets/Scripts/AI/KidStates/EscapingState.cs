@@ -17,7 +17,7 @@ namespace KidStates
             Vector3 targetPosition = GetClosestEscapePosition();
             NavMeshPath path = new NavMeshPath();
 
-            kidController.navMeshAgent.speed = 5;
+            kidController.navMeshAgent.speed = 7.5f;
             kidController.navMeshAgent.destination = targetPosition;
             kidController.navMeshAgent.CalculatePath(targetPosition, path);
         }
