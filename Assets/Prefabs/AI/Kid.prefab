@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2847182186897820561}
   - component: {fileID: 7573695973066257011}
-  - component: {fileID: 1841106722092565696}
+  - component: {fileID: 8191301817289341111}
   m_Layer: 0
   m_Name: Kid
   m_TagString: Untagged
@@ -151,7 +151,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1841106722092565696
+--- !u!114 &8191301817289341111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7400921518625207114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b5c8942385ab6048afea192d677d354, type: 3}
+  m_Script: {fileID: 11500000, guid: b8ab7080fd184a24c93cec0e7012f041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGoal: {fileID: 0}
+  navMeshAgent: {fileID: 0}

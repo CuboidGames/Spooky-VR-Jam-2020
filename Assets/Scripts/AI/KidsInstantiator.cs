@@ -1,3 +1,4 @@
+using Assets.Scripts.AI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class KidsInstantiator : MonoBehaviour
 
     public UnityEvent OnKidsInstantiated;
 
-    public void InstantiateKids()
+    public void InstantiateKids(GroupController groupController)
     {
         float distance = groupSize / 2;
 
@@ -23,7 +24,10 @@ public class KidsInstantiator : MonoBehaviour
             float angleOffset = GetAngleOffset(i, groupSize);
             Vector3 position = new Vector3(Mathf.Sin(angleOffset), 0, Mathf.Cos(angleOffset)) * distance;
 
-            Instantiate(kidPrefab, transform.position + position, Quaternion.identity, transform);
+            GameObject kidInstance = Instantiate(kidPrefab, transform.position + position, Quaternion.identity, transform);
+            KidController kidController = kidInstance.GetComponent<KidController>();
+
+            kidController.groupController = groupController;
         }
 
         OnKidsInstantiated.Invoke();

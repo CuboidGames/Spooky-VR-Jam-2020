@@ -2,13 +2,15 @@
 using System.Collections;
 using KidStates;
 using UnityEngine.AI;
+using Assets.Scripts.AI;
 
 public class KidController : MonoBehaviour
 {
 
     public NavMeshAgent navMeshAgent;
+    public GroupController groupController;
 
-    private AbstractKidState kidState;
+    public AbstractKidState kidState;
 
     void Start()
     {
@@ -31,15 +33,18 @@ public class KidController : MonoBehaviour
         kidState.OnStateEnter();
     }
 
+    public void RequestNewGroupTarget()
+    {
+        groupController.GetNewTarget();
+    }
+
     void HandleKidState()
     {
-        if (kidState != null)
-        {
-            kidState.Update();
-        } 
-        else
+        if (kidState == null)
         {
             SetState(new NavigatingState(this));
-        }
+        } 
+
+        kidState.Update();
     }
 }

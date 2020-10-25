@@ -11,7 +11,7 @@ namespace KidStates
 
         public override void OnStateEnter()
         {
-            // TODO: use group target
+            kidController.navMeshAgent.destination = kidController.groupController.currentGoal.position;
         }
 
         public override void OnStateExit()

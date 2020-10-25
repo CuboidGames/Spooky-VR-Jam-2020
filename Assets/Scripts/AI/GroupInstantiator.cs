@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.AI;
 
 public class GroupInstantiator : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GroupInstantiator : MonoBehaviour
 
     [SerializeField]
     private int maxKidsInGroup = 2;
+
 
     void Start()
     {
@@ -45,9 +47,14 @@ public class GroupInstantiator : MonoBehaviour
     {
         GameObject groupInstance = Instantiate(groupPrefab, parent);
         KidsInstantiator kidInstantiator = groupInstance.GetComponent<KidsInstantiator>();
+        GroupController groupController = groupInstance.GetComponent<GroupController>();
+
 
         kidInstantiator.groupSize = Random.Range(minKidsInGroup, maxKidsInGroup);
         kidInstantiator.kidPrefab = kidPrefab;
-        kidInstantiator.InstantiateKids();
+        kidInstantiator.InstantiateKids(groupController);
+
+        groupController.GetGroupKids();
+        groupController.GetNewTarget();
     }
 }

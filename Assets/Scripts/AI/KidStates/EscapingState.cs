@@ -22,7 +22,7 @@ namespace KidStates
 
         public override void Update()
         {
-            if (GetDistanceToPlayer() > 15)
+            if (GetDistanceToPlayer() > 30)
             {
                 kidController.SetState(new NavigatingState(kidController));
             }
@@ -31,10 +31,16 @@ namespace KidStates
         // Gets the vector3 of the closest place to escape (in straight line, not using NavMeshAgent)
         private Vector3 GetClosestEscapePosition()
         {
-            Vector3 closestEscapePosition = Vector3.zero;
+            if (escapeObjects.Length == 0)
+            {
+                return Vector3.zero;
+            }
+
+            Vector3 closestEscapePosition = escapeObjects[0].transform.position;
 
             foreach (var escapeObject in escapeObjects)
             {
+                // TODO: avoid walking towards player 
                 if (Vector3.Distance(kidController.transform.position, escapeObject.transform.position) < Vector3.Distance(kidController.transform.position, closestEscapePosition))
                 {
                     closestEscapePosition = escapeObject.transform.position;

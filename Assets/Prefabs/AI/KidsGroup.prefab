@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8445783712005252154}
   - component: {fileID: 7440942506104179511}
+  - component: {fileID: 2319354766630035489}
   m_Layer: 0
   m_Name: KidsGroup
   m_TagString: Untagged
@@ -48,3 +49,16 @@ MonoBehaviour:
   OnKidsInstantiated:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2319354766630035489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2643776651783058569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0852f519c039fda44a92b84233655a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGoal: {fileID: 0}
