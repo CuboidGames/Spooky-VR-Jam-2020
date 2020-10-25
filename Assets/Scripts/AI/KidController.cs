@@ -7,6 +7,12 @@ using Assets.Scripts.AI;
 public class KidController : MonoBehaviour
 {
 
+    [SerializeField]
+    public Animator animationController;
+
+    [SerializeField]
+    public ParticleSystem candyParticleSystem;
+
     public NavMeshAgent navMeshAgent;
     public GroupController groupController;
 
@@ -36,6 +42,11 @@ public class KidController : MonoBehaviour
     public void RequestNewGroupTarget()
     {
         groupController.GetNewTarget();
+    }
+
+    public void Die()
+    {
+        SetState(new DeadState(this));
     }
 
     void HandleKidState()

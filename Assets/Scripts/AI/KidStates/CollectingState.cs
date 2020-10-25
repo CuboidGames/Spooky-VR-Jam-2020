@@ -14,6 +14,7 @@ namespace KidStates
         public override void OnStateEnter()
         {
             coroutine = kidController.StartCoroutine(CollectCoroutine());
+            kidController.candyParticleSystem.Stop();
         }
 
         public override void OnStateExit()
@@ -22,6 +23,7 @@ namespace KidStates
             {
                 kidController.StopCoroutine(CollectCoroutine());
             }
+            kidController.candyParticleSystem.Play();
         }
 
         public override void Update()

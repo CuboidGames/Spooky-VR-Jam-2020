@@ -11,6 +11,7 @@ namespace KidStates
 
         public override void OnStateEnter()
         {
+            kidController.navMeshAgent.speed = 3.5f;
             kidController.navMeshAgent.destination = kidController.groupController.currentGoal.position;
         }
 
@@ -20,7 +21,7 @@ namespace KidStates
 
         public override void Update()
         {
-            if (GetDistanceToPlayer() < 10) {
+            if (GetDistanceToPlayer() < 30) {
                 kidController.SetState(new EscapingState(kidController));
             } else if (Vector3.Distance(kidController.transform.position, kidController.navMeshAgent.destination) < 3)
             {

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 namespace KidStates
 {
@@ -13,7 +14,12 @@ namespace KidStates
 
         public override void OnStateEnter()
         {
-            kidController.navMeshAgent.destination = GetClosestEscapePosition();
+            Vector3 targetPosition = GetClosestEscapePosition();
+            NavMeshPath path = new NavMeshPath();
+
+            kidController.navMeshAgent.speed = 5;
+            kidController.navMeshAgent.destination = targetPosition;
+            kidController.navMeshAgent.CalculatePath(targetPosition, path);
         }
 
         public override void OnStateExit()
@@ -22,7 +28,7 @@ namespace KidStates
 
         public override void Update()
         {
-            if (GetDistanceToPlayer() > 30)
+            if (GetDistanceToPlayer() > 60)
             {
                 kidController.SetState(new NavigatingState(kidController));
             }
