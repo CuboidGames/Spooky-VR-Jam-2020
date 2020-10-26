@@ -13,6 +13,7 @@ namespace KidStates
         {
             kidController.navMeshAgent.speed = 3.5f;
             kidController.navMeshAgent.destination = kidController.groupController.currentGoal.position;
+            kidController.animationController.SetInteger("state", 1);
         }
 
         public override void OnStateExit()

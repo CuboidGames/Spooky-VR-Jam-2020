@@ -20,6 +20,7 @@ namespace KidStates
             kidController.navMeshAgent.speed = 7.5f;
             kidController.navMeshAgent.destination = targetPosition;
             kidController.navMeshAgent.CalculatePath(targetPosition, path);
+            kidController.animationController.SetInteger("state", 2);
         }
 
         public override void OnStateExit()
