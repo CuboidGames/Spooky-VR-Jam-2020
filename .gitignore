@@ -17,6 +17,11 @@ Assets/XR/
 Assets/Oculus/
 Assets/Asset Store/
 
+# ========= #
+# Lightmaps #
+# ========= #
+Assets/**/Lightmap-*.*
+
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
