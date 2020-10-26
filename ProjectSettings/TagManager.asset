@@ -9,6 +9,7 @@ TagManager:
   - Kid
   - Floor
   - PlayerWeapon
+  - UIElement
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - UI
   - Blade
   - Player
-  - 
-  - 
+  - UISelector
+  - UIElement
   - 
   - 
   - 
